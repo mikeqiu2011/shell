@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  master:
+    build: .
+    image: mikeqiu2011/mycentos7:1
+    # ports:
+    #   - "8080:80"
+    # command: /usr/sbin/sshd
+    volumes:
+      - .:/code
+    networks:
+      - code-network
+
+networks:
+  code-network:
+    driver: bridge
